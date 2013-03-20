@@ -7,7 +7,7 @@
    - example.com
    - example.net
   tasks:
-  - template: src=${item} dest=/tmp/with-first.${item}.zone
+  - template: src=${firstFile} dest=/tmp/with-first.${item}.zone
     with_items: $ZONES
     first_available_file:
     - ${item}.zone

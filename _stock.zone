@@ -1,0 +1,13 @@
+$TTL 86400
+@ IN SOA dns.example.com. admin.example.com (
+	1
+	3600
+	450
+	608400
+	86400
+);
+
+	IN NS	dns1.<%= item %>.net.
+	IN NS	dns2.<%= item %>.net.
+
+www IN A 10.77.66.2

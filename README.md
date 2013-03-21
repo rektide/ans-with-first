@@ -14,3 +14,6 @@ Hope
 with_item and first_available_file both collide with the $item variable. Rather than forbid this clobbering outright, provide a non-colliding codepath where both can be used: with_{plugin} to iterate through the action multiple times, and first_available_file to look for targets within a single run. with-first.disambiguated.pb demonstrates such a non-colliding path, making use of distinct ${firstAvailableFile} and ${item} files.
 
 For backwards compatibility sake, ${item} can continue to be set by first_available_file in all cases where with_{plugin} is not used.
+
+Alas movement appears to be towards further overriding the use of ${item} to make it do more, not separate out the distinct contextual uses of first_available_file (which operates WITHIN an iteration of a module being looped through via with_{plugin}) and with_{plugin}, which triggers this outtermost looping iteration.
+https://github.com/ansible/ansible/pull/2260
